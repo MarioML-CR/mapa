@@ -17,9 +17,9 @@ public:
 
     virtual ~Arista();
 
-    int getPeso() const;
+    float getPeso() const;
 
-    void setPeso(int peso);
+    void setPeso(float peso);
 
     const string &getNombre() const;
 
@@ -42,7 +42,7 @@ public:
     void setAnt(Arista *ant);
 
 private:
-    int peso;
+    float peso;
     string nombre;
     Vertice *ady;
     Arista *sig;

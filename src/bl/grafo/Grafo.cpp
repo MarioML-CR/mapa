@@ -146,7 +146,7 @@ void Grafo::insertarAlFinal(int indice, string &nombre) {
  * @param llegada       variable de tipo vértice que representa el vértice de llegada
  * @param peso          variable de tipo int que representa el peso del arco
  */
-string Grafo::insertaArista(string &salida, string &llegada, int peso) {
+string Grafo::insertaArista(string &salida, string &llegada, float peso) {
     string res = "";
     Vertice *origen = getVertice(salida);
     Vertice *destino = getVertice(llegada);
@@ -782,10 +782,11 @@ string Grafo::dijkstra(Vertice *origen, Vertice *destino) {
     if (origen == nullptr || destino == nullptr){
         res = "El origen o destino no existen";
     } else {
-        int costoActual = 0, band, band2 = 0;
+        float costoActual = 0;
+        int band, band2 = 0;
         Vertice *verticeActual, *destinoActual;
         Arista *aux;
-        typedef pair<Vertice*, int> verticeCosto;
+        typedef pair<Vertice*, float> verticeCosto;
         typedef pair<Vertice*, Vertice*> verticeVertice;
         list<verticeCosto> listaCostos;
         list<verticeCosto> listaOrdenada;

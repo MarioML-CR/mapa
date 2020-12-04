@@ -14,11 +14,11 @@ Arista::~Arista() {
 
 }
 
-int Arista::getPeso() const {
+float Arista::getPeso() const {
     return peso;
 }
 
-void Arista::setPeso(int peso) {
+void Arista::setPeso(float peso) {
     Arista::peso = peso;
 }
 

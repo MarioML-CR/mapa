@@ -39,7 +39,7 @@ public:
 
     void insertVertice(int indice, string & nombre);
 
-    string insertaArista(string &salida, string &llegada, int peso);
+    string insertaArista(string &salida, string &llegada, float peso);
 
     string listaSucesores();
 

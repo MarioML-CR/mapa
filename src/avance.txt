@@ -1,0 +1,46 @@
+CARARA
+    CONCHAL
+    CAHUITA
+    GOLFITO
+    JACó
+    FLAMINGO
+    TALAMANCA
+    DONIMICAL
+    TAMARINDO
+    CORCOVADO
+    MONTEZUMA
+    SIQUIRRES
+    PUNTA_UVA
+    MANZANILLO
+    MONTEVERDE
+    SANTA_ROSA
+    TORTUGUERO
+    SAN_JOSé
+    ISLA_TORTUGA
+    PUERTO_VIEJO
+    SARAPIQUí
+    GOLFO_PAPAGAYO
+    MANUEL_ANTONIO
+    BAHíA_DRAKE
+    RíO_PACUARE
+    VOLCáN_POAS
+    BRAULIO_CARRILLO
+    VOLCáN_ARENAL
+    ISLA_DEL_CAñO
+    VOLCáN_IRAZú
+    */
+    gestor.insertaArista("SAN_JOSé", "VOLCáN_POAS", 500);
+    gestor.insertaArista("SAN_JOSé", "BRAULIO_CARRILLO", 200);
+    gestor.insertaArista("SAN_JOSé", "VOLCáN_IRAZú", 600);
+    gestor.insertaArista("SAN_JOSé", "CARARA", 600);
+    gestor.insertaArista("BRAULIO_CARRILLO", "SARAPIQUí", 100);
+    gestor.insertaArista("BRAULIO_CARRILLO", "VOLCáN_POAS", 500);
+    gestor.insertaArista("VOLCáN_POAS", "MONTEVERDE", 200);
+    gestor.insertaArista("MONTEVERDE", "VOLCáN_ARENAL", 300);
+    gestor.insertaArista("CARARA", "JACó", 800);
+    gestor.insertaArista("JACó", "MANUEL_ANTONIO", 400);
+    gestor.insertaArista("MANUEL_ANTONIO", "DONIMICAL", 300);
+    gestor.insertaArista("DONIMICAL", "BAHíA_DRAKE", 300);
+    gestor.insertaArista("BAHíA_DRAKE", "CORCOVADO", 480);
+    gestor.insertaArista("BAHíA_DRAKE", "ISLA_DEL_CAñO", 220);
+    gestor.insertaArista("CORCOVADO", "ISLA_DEL_CAñO", 560);

@@ -2,3 +2,4 @@
 
 opción dos
 mapas ya hechos, ej
+"san_josé", "volcán_arenal", "monteverde", "volcán_poas", "santa_rosa", "golfo_papagayo", "conchal", "flamingo", "tamarindo", "montezuma", "isla_tortuga",  "carara", "jacó", "manuel_antorio", "donimical", "bahía_drake", "isla_del_caño", "corcovado", "golfito" "talamanca", "sarapiquí", "braulio_carrillo", "volcán_irazú", "tortuguero", "siquirres", "río_pacuare", "cahuita", "punta_uva", "puerto_viejo", "manzanillo"

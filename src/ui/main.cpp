@@ -20,8 +20,10 @@ void recorridoProfundidad();
 void primeroAnchura();
 void primeroProfundidad();
 void dijkstra();
+void prueba();
 
 int main() {
+    prueba();
     insertMapa();
     menu();
     return 0;
@@ -91,7 +93,33 @@ void procesarMenu(int & pOpcion, bool & salir) {
             cout << "Opción inválida\n";
     }
 }
-
+void prueba(){
+//    string texto = "áéíóúÁÉÍÓÚaeiouAEIOU";
+//    string texto = "aeiouAEIOU";
+////    string texto;
+//    char uno[3];
+//    char e[3] = "é";
+//    const char *a = "á";
+//    int valor;
+//    string texto, letra, final;
+//    cout << "texto\n";
+//    cin >> texto;
+//    for (int i = 0; i < texto.length(); ++i) {
+//        for (auto & c: texto) c = toupper(c);
+//    }
+//    cout << "largo " << texto.length() << endl;
+//    for (int i = 0; i < texto.length(); ++i) {
+//        letra = texto[i];
+////        uno = letra;
+//        cout << "imp " << letra << endl;
+//
+//        if (letra == "í"){
+//            letra = "Í";
+//        }
+//        final += letra;
+//    }
+//    cout << "valor " << final << " luego " << endl;
+}
 int ingresarNum(string msg){
     int num;
     string valor;
@@ -108,39 +136,85 @@ int ingresarNum(string msg){
 
 void insertMapa(){
     // inserción de vértices
-    string ubic[82] = {"San José", "Escazú", "Desamparados", "Puriscal", "Tarrazú", "Aserrí", "Mora",
-                       "Goicoechea", "Santa_Ana", "Alajuelita", "Vázquez_de_Coronado", "Acosta", "Tibás",
-                       "Moravia", "Montes_de_Oca", "Turrubares", "Dota", "Curridabat", "Pérez_Zeledón",
-                       "León_Cortés_Castro", "Alajuela", "San_Ramón", "Grecia", "San_Mateo", "Atenas",
-                       "Naranjo", "Palmares", "Poás", "Orotina", "San_Carlos", "Zarcero", "Valverde_Vega",
-                       "Upala", "Los_Chiles", "Guatuso", "Cartago", "Paraíso","La_Unión", "Jiménez",
-                       "Turrialba", "Alvarado", "Oreamuno", "El_Guarco", "Heredia", "Barva", "Santo_Domingo",
-                       "Santa_Bárbara", "San_Rafael", "San_Isidro", "Belén", "Flores", "San_Pablo",
-                       "Sarapiquí", "Liberia", "Nicoya", "Santa_Cruz", "Bagaces", "Carrillo", "Cañas",
-                       "Abangares", "Tilarán", "Nandayure", "La_Cruz", "Hojancha", "Puntarenas", "Esparza",
-                       "Buenos_Aires", "Montes_de_Oro", "Osa", "Aguirre", "Golfito", "Coto_Brus", "Parrita",
-                       "Corredores", "Garabito", "Limón", "Pococí", "Siquirres", "Talamanca", "Matina",
-                       "Guácimo", "Río_Cuarto"}
-    string nombres[7] = {"SAN_JOSé", "ALAJUELA", "CARTAGO", "HEREDIA", "PUNTARENAS", "GUANACASTE", "LIMóN"};
-    for (int i = 0; i < 7; ++i) {
-        gestor.insertVertice(nombres[i]);
-        gestor.addUbicaciones(nombres[i]);
+    string ubic[32] = {"san_josé", "volcán_arenal", "monteverde", "volcán_poas", "santa_rosa",
+                       "golfo_papagayo", "conchal", "flamingo", "tamarindo", "montezuma",
+                       "isla_tortuga",  "carara", "jacó", "manuel_antonio", "donimical",
+                       "bahía_drake", "isla_del_caño", "corcovado", "golfito", "talamanca",
+                       "sarapiquí", "braulio_carrillo", "volcán_irazú", "tortuguero", "siquirres",
+                       "río_pacuare", "cahuita", "punta_uva", "puerto_viejo", "manzanillo",
+                       "puntarenas", "liberia"};
+    for (int i = 0; i < 32; ++i) {
+        for (auto & c: ubic[i]) c = toupper(c);
+        gestor.insertVertice( ubic[i]);
+        gestor.addUbicaciones(ubic[i]);
     }
     // inserción de aristas
-    gestor.insertaArista("SAN_JOSé", "CARTAGO", 500);
-    gestor.insertaArista("SAN_JOSé", "HEREDIA", 200);
-    gestor.insertaArista("SAN_JOSé", "GUANACASTE", 600);
-    gestor.insertaArista("ALAJUELA", "PUNTARENAS", 100);
-    gestor.insertaArista("ALAJUELA", "CARTAGO", 500);
-    gestor.insertaArista("CARTAGO", "GUANACASTE", 200);
-    gestor.insertaArista("HEREDIA", "ALAJUELA", 300);
-    gestor.insertaArista("HEREDIA", "GUANACASTE", 800);
-    gestor.insertaArista("PUNTARENAS", "SAN_JOSé", 400);
-    gestor.insertaArista("PUNTARENAS", "CARTAGO", 300);
-    gestor.insertaArista("GUANACASTE", "PUNTARENAS", 300);
-    gestor.insertaArista("LIMóN", "SAN_JOSé", 480);
-    gestor.insertaArista("LIMóN", "HEREDIA", 220);
-    gestor.insertaArista("LIMóN", "CARTAGO", 560);
+    /**
+    CARARA
+    CONCHAL
+    CAHUITA
+    GOLFITO
+    JACó
+    FLAMINGO
+    TALAMANCA
+    DONIMICAL
+    TAMARINDO
+    CORCOVADO
+    MONTEZUMA
+    SIQUIRRES
+    PUNTA_UVA
+    MANZANILLO
+    MONTEVERDE
+    SANTA_ROSA
+    TORTUGUERO
+    SAN_JOSé
+    ISLA_TORTUGA
+    PUERTO_VIEJO
+    SARAPIQUí
+    GOLFO_PAPAGAYO
+    MANUEL_ANTONIO
+    BAHíA_DRAKE
+    RíO_PACUARE
+    VOLCáN_POAS
+    BRAULIO_CARRILLO
+    VOLCáN_ARENAL
+    ISLA_DEL_CAñO
+    VOLCáN_IRAZú
+    PUNTARENAS
+    */
+    gestor.insertaArista("SAN_JOSé", "VOLCáN_POAS", 48.8);
+    gestor.insertaArista("SAN_JOSé", "BRAULIO_CARRILLO", 53.5);
+    gestor.insertaArista("SAN_JOSé", "VOLCáN_IRAZú", 51);
+    gestor.insertaArista("SAN_JOSé", "CARARA", 75.6);
+//    gestor.insertaArista("CARARA", "SAN_JOSé", 75.6); // TODO: revisar
+    gestor.insertaArista("BRAULIO_CARRILLO", "SARAPIQUí", 44);
+    gestor.insertaArista("BRAULIO_CARRILLO", "VOLCáN_POAS", 25.1);
+    gestor.insertaArista("VOLCáN_POAS", "PUNTARENAS", 106);
+    gestor.insertaArista("VOLCáN_POAS", "VOLCáN_ARENAL", 117);
+    gestor.insertaArista("PUNTARENAS", "MONTEVERDE", 62.7);
+
+    gestor.insertaArista("PUNTARENAS", "ISLA_TORTUGA", 59.6);
+    gestor.insertaArista("PUNTARENAS", "TAMARINDO", 171);
+    gestor.insertaArista("PUNTARENAS", "FLAMINGO", 187);
+    gestor.insertaArista("PUNTARENAS", "CONCHAL", 188);
+    gestor.insertaArista("PUNTARENAS", "GOLFO_PAPAGAYO", 162);
+    gestor.insertaArista("PUNTARENAS", "MONTEZUMA", 87.4);
+    gestor.insertaArista("PUNTARENAS", "LIBERIA", 125);
+    gestor.insertaArista("MONTEZUMA", "TAMARINDO", 184);
+    gestor.insertaArista("FLAMINGO", "TAMARINDO", 23.8);
+    gestor.insertaArista("FLAMINGO", "CONCHAL", 6.2);
+    gestor.insertaArista("GOLFO_PAPAGAYO", "CONCHAL", 57);
+    gestor.insertaArista("LIBERIA", "GOLFO_PAPAGAYO", 42.1);
+
+    gestor.insertaArista("MONTEVERDE", "VOLCáN_ARENAL", 105);
+    gestor.insertaArista("CARARA", "JACó", 23.8);
+    gestor.insertaArista("CARARA", "PUNTARENAS", 39.2);
+    gestor.insertaArista("JACó", "MANUEL_ANTONIO", 78.8);
+    gestor.insertaArista("MANUEL_ANTONIO", "DONIMICAL", 49.8);
+    gestor.insertaArista("DONIMICAL", "BAHíA_DRAKE", 165);
+    gestor.insertaArista("BAHíA_DRAKE", "GOLFITO", 93.9);
+    gestor.insertaArista("BAHíA_DRAKE", "ISLA_DEL_CAñO", 30);
+    gestor.insertaArista("CORCOVADO", "ISLA_DEL_CAñO", 60);
     cout << "La carga se realizó satisfactoriamente. Para ver reportes vuelva al menú principal\n";
 }
 void optenerUbicacion(){
