@@ -108,6 +108,19 @@ int ingresarNum(string msg){
 
 void insertMapa(){
     // inserción de vértices
+    string ubic[82] = {"San José", "Escazú", "Desamparados", "Puriscal", "Tarrazú", "Aserrí", "Mora",
+                       "Goicoechea", "Santa_Ana", "Alajuelita", "Vázquez_de_Coronado", "Acosta", "Tibás",
+                       "Moravia", "Montes_de_Oca", "Turrubares", "Dota", "Curridabat", "Pérez_Zeledón",
+                       "León_Cortés_Castro", "Alajuela", "San_Ramón", "Grecia", "San_Mateo", "Atenas",
+                       "Naranjo", "Palmares", "Poás", "Orotina", "San_Carlos", "Zarcero", "Valverde_Vega",
+                       "Upala", "Los_Chiles", "Guatuso", "Cartago", "Paraíso","La_Unión", "Jiménez",
+                       "Turrialba", "Alvarado", "Oreamuno", "El_Guarco", "Heredia", "Barva", "Santo_Domingo",
+                       "Santa_Bárbara", "San_Rafael", "San_Isidro", "Belén", "Flores", "San_Pablo",
+                       "Sarapiquí", "Liberia", "Nicoya", "Santa_Cruz", "Bagaces", "Carrillo", "Cañas",
+                       "Abangares", "Tilarán", "Nandayure", "La_Cruz", "Hojancha", "Puntarenas", "Esparza",
+                       "Buenos_Aires", "Montes_de_Oro", "Osa", "Aguirre", "Golfito", "Coto_Brus", "Parrita",
+                       "Corredores", "Garabito", "Limón", "Pococí", "Siquirres", "Talamanca", "Matina",
+                       "Guácimo", "Río_Cuarto"}
     string nombres[7] = {"SAN_JOSé", "ALAJUELA", "CARTAGO", "HEREDIA", "PUNTARENAS", "GUANACASTE", "LIMóN"};
     for (int i = 0; i < 7; ++i) {
         gestor.insertVertice(nombres[i]);
