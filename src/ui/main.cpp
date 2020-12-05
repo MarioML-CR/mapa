@@ -20,10 +20,8 @@ void recorridoProfundidad();
 void primeroAnchura();
 void primeroProfundidad();
 void dijkstra();
-void prueba();
 
 int main() {
-    prueba();
     insertMapa();
     menu();
     return 0;
@@ -93,55 +91,15 @@ void procesarMenu(int & pOpcion, bool & salir) {
             cout << "Opción inválida\n";
     }
 }
-void prueba(){
-//    string texto = "áéíóúÁÉÍÓÚaeiouAEIOU";
-//    string texto = "aeiouAEIOU";
-////    string texto;
-//    char uno[3];
-//    char e[3] = "é";
-//    const char *a = "á";
-//    int valor;
-//    string texto, letra, final;
-//    cout << "texto\n";
-//    cin >> texto;
-//    for (int i = 0; i < texto.length(); ++i) {
-//        for (auto & c: texto) c = toupper(c);
-//    }
-//    cout << "largo " << texto.length() << endl;
-//    for (int i = 0; i < texto.length(); ++i) {
-//        letra = texto[i];
-////        uno = letra;
-//        cout << "imp " << letra << endl;
-//
-//        if (letra == "í"){
-//            letra = "Í";
-//        }
-//        final += letra;
-//    }
-//    cout << "valor " << final << " luego " << endl;
-}
-int ingresarNum(string msg){
-    int num;
-    string valor;
-    do {
-        cout << msg << endl;
-        cin >> valor;
-        num = validar.ingresarInt(valor);
-        if (num == -1){
-            cout << "El indice ingresado es incorrecto\nVuelva a intentarlo\n";
-        }
-    } while (num == -1);
-    return num;
-}
 
 void insertMapa(){
     // inserción de vértices
-    string ubic[32] = {"san_josé", "volcán_arenal", "monteverde", "volcán_poas", "santa_rosa",
+    string ubic[32] = {"san_jose", "volcan_arenal", "monteverde", "volcan_poas", "santa_rosa",
                        "golfo_papagayo", "conchal", "flamingo", "tamarindo", "montezuma",
-                       "isla_tortuga",  "carara", "jacó", "manuel_antonio", "donimical",
-                       "bahía_drake", "isla_del_caño", "corcovado", "golfito", "talamanca",
-                       "sarapiquí", "braulio_carrillo", "volcán_irazú", "tortuguero", "siquirres",
-                       "río_pacuare", "cahuita", "punta_uva", "puerto_viejo", "manzanillo",
+                       "isla_tortuga",  "carara", "jaco", "manuel_antonio", "donimical",
+                       "bahia_drake", "isla_del_cano", "corcovado", "golfito", "talamanca",
+                       "sarapiqui", "braulio_carrillo", "volcan_irazu", "tortuguero", "siquirres",
+                       "rio_pacuare", "cahuita", "punta_uva", "puerto_viejo", "manzanillo",
                        "puntarenas", "liberia"};
     for (int i = 0; i < 32; ++i) {
         for (auto & c: ubic[i]) c = toupper(c);
@@ -154,7 +112,7 @@ void insertMapa(){
     CONCHAL
     CAHUITA
     GOLFITO
-    JACó
+    JACO
     FLAMINGO
     TALAMANCA
     DONIMICAL
@@ -167,30 +125,30 @@ void insertMapa(){
     MONTEVERDE
     SANTA_ROSA
     TORTUGUERO
-    SAN_JOSé
+    SAN_JOSE
     ISLA_TORTUGA
     PUERTO_VIEJO
-    SARAPIQUí
+    SARAPIQUI
     GOLFO_PAPAGAYO
     MANUEL_ANTONIO
-    BAHíA_DRAKE
-    RíO_PACUARE
-    VOLCáN_POAS
+    BAHIA_DRAKE
+    RIO_PACUARE
+    VOLCAN_POAS
     BRAULIO_CARRILLO
-    VOLCáN_ARENAL
-    ISLA_DEL_CAñO
-    VOLCáN_IRAZú
+    VOLCAN_ARENAL
+    ISLA_DEL_CANO
+    VOLCAN_IRAZU
     PUNTARENAS
     */
-    gestor.insertaArista("SAN_JOSé", "VOLCáN_POAS", 48.8);
-    gestor.insertaArista("SAN_JOSé", "BRAULIO_CARRILLO", 53.5);
-    gestor.insertaArista("SAN_JOSé", "VOLCáN_IRAZú", 51);
-    gestor.insertaArista("SAN_JOSé", "CARARA", 75.6);
-//    gestor.insertaArista("CARARA", "SAN_JOSé", 75.6); // TODO: revisar
-    gestor.insertaArista("BRAULIO_CARRILLO", "SARAPIQUí", 44);
-    gestor.insertaArista("BRAULIO_CARRILLO", "VOLCáN_POAS", 25.1);
-    gestor.insertaArista("VOLCáN_POAS", "PUNTARENAS", 106);
-    gestor.insertaArista("VOLCáN_POAS", "VOLCáN_ARENAL", 117);
+    gestor.insertaArista("SAN_JOSE", "VOLCAN_POAS", 48.8);
+    gestor.insertaArista("SAN_JOSE", "BRAULIO_CARRILLO", 53.5);
+    gestor.insertaArista("SAN_JOSE", "VOLCAN_IRAZU", 51);
+    gestor.insertaArista("SAN_JOSE", "CARARA", 75.6);
+//    gestor.insertaArista("CARARA", "SAN_JOSE", 75.6); // TODO: revisar
+    gestor.insertaArista("BRAULIO_CARRILLO", "SARAPIQUI", 44);
+    gestor.insertaArista("BRAULIO_CARRILLO", "VOLCAN_POAS", 25.1);
+    gestor.insertaArista("VOLCAN_POAS", "PUNTARENAS", 106);
+    gestor.insertaArista("VOLCAN_POAS", "VOLCAN_ARENAL", 117);
     gestor.insertaArista("PUNTARENAS", "MONTEVERDE", 62.7);
 
     gestor.insertaArista("PUNTARENAS", "ISLA_TORTUGA", 59.6);
@@ -206,15 +164,15 @@ void insertMapa(){
     gestor.insertaArista("GOLFO_PAPAGAYO", "CONCHAL", 57);
     gestor.insertaArista("LIBERIA", "GOLFO_PAPAGAYO", 42.1);
 
-    gestor.insertaArista("MONTEVERDE", "VOLCáN_ARENAL", 105);
-    gestor.insertaArista("CARARA", "JACó", 23.8);
+    gestor.insertaArista("MONTEVERDE", "VOLCAN_ARENAL", 105);
+    gestor.insertaArista("CARARA", "JACO", 23.8);
     gestor.insertaArista("CARARA", "PUNTARENAS", 39.2);
-    gestor.insertaArista("JACó", "MANUEL_ANTONIO", 78.8);
+    gestor.insertaArista("JACO", "MANUEL_ANTONIO", 78.8);
     gestor.insertaArista("MANUEL_ANTONIO", "DONIMICAL", 49.8);
-    gestor.insertaArista("DONIMICAL", "BAHíA_DRAKE", 165);
-    gestor.insertaArista("BAHíA_DRAKE", "GOLFITO", 93.9);
-    gestor.insertaArista("BAHíA_DRAKE", "ISLA_DEL_CAñO", 30);
-    gestor.insertaArista("CORCOVADO", "ISLA_DEL_CAñO", 60);
+    gestor.insertaArista("DONIMICAL", "BAHIA_DRAKE", 165);
+    gestor.insertaArista("BAHIA_DRAKE", "GOLFITO", 93.9);
+    gestor.insertaArista("BAHIA_DRAKE", "ISLA_DEL_CANO", 30);
+    gestor.insertaArista("CORCOVADO", "ISLA_DEL_CANO", 60);
     cout << "La carga se realizó satisfactoriamente. Para ver reportes vuelva al menú principal\n";
 }
 void optenerUbicacion(){
@@ -251,40 +209,6 @@ void listaPredecesoresXVertice(){
         for (auto & c: vertice) c = toupper(c);
         cout << gestor.listaPredecesoresXVertice(vertice);
     }
-}
-void eliminarVertice(){
-    if (gestor.vacio()){
-        cout << "Aún no se han ingresado vértices...\n";
-    } else {
-        string vertice;
-        cout << "Ingrese el nombre del vértice que desea eliminar\n";
-        cin >> vertice;
-        for (auto & c: vertice) c = toupper(c);
-        cout << gestor.eliminarVertice(vertice);
-    }
-}
-void eliminarArista(){
-    if (gestor.vacio()){
-        cout << "Aún no se han ingresado vértices...\n";
-    } else {
-        string origen, destino;
-        cout << "Ingrese la ciudad de origen\n";
-        cin >> origen;
-        for (auto & c: origen) c = toupper(c);
-        cout << "Ingrese la ciudad de destino\n";
-        cin >> destino;
-        for (auto & c: destino) c = toupper(c);
-        cout << gestor.eliminarArista(origen, destino) << endl;
-    }
-
-}
-void eliminarGrafo(){
-    if (gestor.vacio()){
-        cout << "Aún no se han ingresado vértices...\n";
-    } else {
-        gestor.eliminarGrafo();
-    }
-
 }
 void numVertices(){
     if (gestor.vacio()){

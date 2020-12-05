@@ -260,8 +260,6 @@ string Grafo::listaSucesoresXVertice(int indice) {
                 arisAux = arisAux->getSig();
                 i += 1;
             }
-        } else {
-            lista = "El vértice ingresado no existe\n";
         }
     }
     return lista;
@@ -335,8 +333,6 @@ string Grafo::listaPredecesoresXVertice(int indice) {
                 i += 1;
                 arisAux = arisAux->getAnt();
             }
-        } else {
-            lista = "El vértice ingresado no existe\n";
         }
     }
     return lista;
@@ -479,9 +475,11 @@ string Grafo::recorridoAnchura(string &pOrigen) {
  */
 string Grafo::recorridoAnchura(Vertice *origen) {
     string res = "";
+    int k = 0;
     if (origen == nullptr){
         res = "No exite el vértice";
     } else {
+        res = "El recorrido en anchura, a partir de: " + origen->getNombre() + " es:\n";
         int band, band2;
         stack<string> pilaRes; // pila que contiene las respuestas.
         Vertice *actual;
@@ -499,7 +497,12 @@ string Grafo::recorridoAnchura(Vertice *origen) {
                 }
             }
             if (band == 0) { // si el vértice actual no ha sido visitado
-                res += actual->getNombre() + ", "; // procesar el vértice actual
+                k += 1;
+                if(k%5 == 0){
+                    res += actual->getNombre() + ",\n"; // procesar el vértice actual
+                } else {
+                    res += actual->getNombre() + ", "; // procesar el vértice actual
+                }
                 lista.push_back(actual); // colocar el vértice en la lista de visitados
                 Arista * aux = actual->getAdy();
                 while (aux != nullptr){
@@ -537,9 +540,11 @@ string Grafo::recorridoProfundidad(string &pOrigen) {
  */
 string Grafo::recorridoProfundidad(Vertice *origen) {
     string res = "";
+    int k = 0;
     if (origen == nullptr){
         res = "No exite el vértice";
     } else {
+        res = "El recorrido en profundidad, a partir de: " + origen->getNombre() + " es:\n";
         int band, band2;
         Vertice *actual;
         stack<Vertice*> pila;
@@ -556,7 +561,12 @@ string Grafo::recorridoProfundidad(Vertice *origen) {
                 }
             }
             if (band == 0){ // si el vertice actual no ha sido visitado:
-                res += actual->getNombre() + ", "; // se "procesa" el vértice actual
+                k += 1;
+                if(k%5 == 0){
+                    res += actual->getNombre() + ",\n"; // se "procesa" el vértice actual
+                } else {
+                    res += actual->getNombre() + ", "; // se "procesa" el vértice actual
+                }
                 lista.push_back(actual); // se coloca el vértice actual en la lista de visitados
                 Arista *aux = actual->getAdy(); // se va a ubicar en la primera arista del vértice actual
                 while (aux != nullptr){
